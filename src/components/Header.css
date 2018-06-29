@@ -1,0 +1,40 @@
+
+.header {
+    display: flex;
+    flex-flow: column;
+    background-color: #ffffff;
+}
+
+.header .top-header {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+    font-size: 12px;
+}
+
+.header .top-header .item {
+    margin-left: 10px;
+}
+
+.header .main-header {
+    display: flex;
+    flex-flow: row;
+    border-color: rgb(225, 235, 236);
+    padding: 20px 10px 20px 10px;
+    justify-content: space-between;
+}
+
+.header .main-header .item {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+}
+
+.header .main-header .item-big {
+    flex-grow: 2;
+    flex-flow: row;
+    justify-content: flex-start;
+}
+
