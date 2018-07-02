@@ -3,6 +3,7 @@
     display: flex;
     flex-flow: column;
     background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header .top-header {
@@ -22,19 +23,70 @@
     display: flex;
     flex-flow: row;
     border-color: rgb(225, 235, 236);
-    padding: 20px 10px 20px 10px;
+    align-items: center;
+    border-top: rgb(225, 231, 236) 1px solid;
+    border-bottom: rgb(225, 231, 236) 1px solid;
     justify-content: space-between;
 }
 
-.header .main-header .item {
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-start;
+.header .main-header .left-item {
+    font-size: 20px;
+    color: /*rgb(96, 105, 116);*/ rgb(131, 137, 145);
+    padding: 5px 20px 5px 20px;
 }
 
-.header .main-header .item-big {
-    flex-grow: 2;
+.header .main-header .logo {
+    padding: 10px;
+    margin-left: 10px;
+    border-left: rgb(225, 231, 236) 1px solid;
+}
+
+.header .main-header .logo img {
+    width: 150px;
+}
+
+.header .main-header .menu {
+    display: flex;
     flex-flow: row;
-    justify-content: flex-start;
+    justify-content: center;
+    padding: 10px;
+    flex-grow: 3;
+
+}
+
+.header .main-header .menu .item {
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.header .main-header .tool-bar {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.header .main-header .tool-bar .item {
+    border: #eee 1px solid;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 50%;
+    background-clip: padding-box;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.header .main-header .tool-bar .cart {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border: #eee 1px solid;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 

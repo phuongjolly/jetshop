@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from './Banner';
 import './Header.css';
 
 class Header extends React.Component {
@@ -9,11 +8,11 @@ class Header extends React.Component {
         <div className="top-header">
           <div className="item">
             <i className="envelope outline icon" />
-            <label>lephuong06t3@gmail.com</label>
+            <label>contact@jetshop.com</label>
           </div>
           <div className="item">
             <i className="phone icon" />
-            <label>(+65)8876 4037</label>
+            <label>(+65)868686</label>
           </div>
           <div className="item">
             <i className="facebook f icon" />
@@ -23,21 +22,35 @@ class Header extends React.Component {
           </div>
         </div>
         <div className="main-header">
-          <div className="item">
-            <i className="align justify icon" />
+          <div className="left-item">
+            <i className="bars icon" />
           </div>
-          <div className="item">
-            <i className="twitter icon" />
-            <label>UniShop</label>
+          <div className="logo">
+            <img src="http://themes.rokaux.com/unishop/v3.0/template-1/img/logo/logo.png" alt="logo" />
           </div>
-          <div className="item-big">
-            <div>HOME</div>
-            <div>SHOP</div>
-            <div>CONTACT US</div>
-            <div>ABOUT</div>
+          <div className="menu">
+            <div className="item">HOME</div>
+            <div className="item">SHOP</div>
+            <div className="item">CONTACT US</div>
+            <div className="item">ABOUT</div>
+          </div>
+          <div className="tool-bar">
+            <div className="item">
+              <i className="search icon" />
+            </div>
+            <div className="item">
+              <i className="user outline icon" />
+            </div>
+            <div className="cart">
+              <div>
+                3
+              </div>
+              <di>
+                $1000
+              </di>
+            </div>
           </div>
         </div>
-        <Banner />
       </div>
     );
   }
