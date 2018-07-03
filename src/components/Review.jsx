@@ -41,16 +41,19 @@ class Review extends React.Component {
             <i className="fa fa-star-o" />
           </div>
         </div>
+
         <div className="dish-info">
-          <div>
-            { review.dish.name}
-          </div>
-          <div>
+          <span className="name">
+            <i className="fa fa-cutlery" />
+            &nbsp;
             { review.dish.type}
-          </div>
-          <div>
+          </span>
+          &nbsp;&bull;&nbsp;
+          <span className="restaurant">
+            <i className="fa fa-building-o" />
+            &nbsp;
             { review.dish.restaurant}
-          </div>
+          </span>
         </div>
         <div className="content">
           {shortText ? this.showShortText(review.content) : (
@@ -70,6 +73,12 @@ class Review extends React.Component {
             <div className="time">
               2 days ago
             </div>
+          </div>
+          <div className="actions">
+            <button type="button">
+              <i className="fa fa-bookmark-o" />
+              Save
+            </button>
           </div>
         </div>
       </div>
