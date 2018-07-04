@@ -10,7 +10,7 @@ class Header extends React.Component {
             <i className="bars icon" />
           </div>
           <div className="menu">
-            <img src="https://www.abillionveg.com/static/media/logo-redux-small.1ca4fde8.png" />
+            <img src="https://www.abillionveg.com/static/media/logo-redux-small.1ca4fde8.png" alt="logo" />
           </div>
           <div className="tool-bar">
             <div className="item">

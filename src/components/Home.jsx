@@ -5,15 +5,26 @@ import PropTypes from 'prop-types';
 import Review from './Review';
 import { reviewListActions } from '../store/ReviewListReducer';
 
-function Home({ reviews, showAsGrid, toggleGrid, showMore, shortText }) {
+function Home({
+  reviews, showAsGrid, toggleGrid, toggleList, showMore, shortText,
+}) {
   console.log(toggleGrid);
   return (
     <div className="list-review">
       <div className="page-title">
-        List of Reviews
-        <button role="button" onClick={toggleGrid}>
-          { showAsGrid ? 'Show as List' : 'Show as Grid' }
-        </button>
+        <span>
+            Reviews
+        </span>
+        <div className="view-button">
+          <button onClick={toggleList}>
+            <i className="list icon" />
+            List View
+          </button>
+          <button onClick={toggleGrid}>
+            <i className="table icon" />
+            Grid View
+          </button>
+        </div>
       </div>
       <div className="wrapper">
         <div className="page-content">
@@ -39,7 +50,8 @@ Home.propTypes = {
   reviews: PropTypes.arrayOf(PropTypes.shape()),
   showAsGrid: PropTypes.bool.isRequired,
   toggleGrid: PropTypes.func.isRequired,
-  showMore: PropTypes.PropTypes.isRequired,
+  toggleList: PropTypes.func.isRequired,
+  showMore: PropTypes.func.isRequired,
   shortText: PropTypes.bool,
 };
 

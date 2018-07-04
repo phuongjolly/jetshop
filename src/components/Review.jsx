@@ -27,10 +27,14 @@ class Review extends React.Component {
     const { review, shortText } = this.props;
     return (
       <div className="review">
-        <div
-          className="image"
-          style={{ backgroundImage: `url(${review.images[0].url}` }}
-        />
+        {review.images.length > 0
+          && (
+          <div
+            className="image"
+            style={{ backgroundImage: `url(${review.images[0].url}` }}
+          />
+          )
+        }
         <div className="title">
           { review.title }
           <div className="rating">
@@ -59,6 +63,12 @@ class Review extends React.Component {
           {shortText ? this.showShortText(review.content) : (
             <p>
               { review.content }
+              {(review.content.length > maxLength) && (
+                <span className="show-more" onClick={() => this.props.showMore()}>
+                  [...]
+                </span>
+              )}
+
             </p>
           )}
         </div>

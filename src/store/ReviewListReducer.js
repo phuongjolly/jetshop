@@ -76,9 +76,7 @@ const initState = {
         type: 'Vegan',
         restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
       },
-      images: [
-        { url: 'https://res.cloudinary.com/abillionveg/image/upload/c_scale,w_700/v1530087318/kimchi_ttn85h.jpg' },
-      ],
+      images: [],
       content: 'Kimchi is the center of attention in many Korean foods. The kimchi mentioned at the beginning of this article is actually truer to the original ',
       rate: 5,
       user: {
@@ -94,6 +92,7 @@ const initState = {
 };
 
 const TOGGLE_GRID = 'toggleGrid';
+const TOGGLE_LIST = 'toggleList';
 const LOAD_REVIEWS = 'loadReviews';
 const LOAD_REVIEWS_SUCCESSFUL = 'loadReviewSuccessful';
 const LOAD_REVIEWS_FAIL = 'loadReviewFail';
@@ -123,13 +122,19 @@ export default function ReviewListReducer(state = initState, action) {
     case TOGGLE_GRID: {
       return {
         ...state,
-        showAsGrid: !state.showAsGrid,
+        showAsGrid: true,
+      };
+    }
+    case TOGGLE_LIST: {
+      return {
+        ...state,
+        showAsGrid: false,
       };
     }
     case SHOW_MORE: {
       return {
         ...state,
-        shortText: false,
+        shortText: !state.shortText,
       };
     }
     default: return state;
@@ -143,9 +148,17 @@ export const reviewListActions = {
     };
   },
 
+  toggleList() {
+    console.log('toogle list');
+    return {
+      type: TOGGLE_LIST,
+    };
+  },
+
   showMore() {
     return {
       type: SHOW_MORE,
     };
   },
+
 };
