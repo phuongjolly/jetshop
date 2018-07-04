@@ -89,6 +89,7 @@ const initState = {
   isLoading: false,
   showAsGrid: false,
   shortText: true,
+  showCollectionModal: false,
 };
 
 const TOGGLE_GRID = 'toggleGrid';
@@ -97,6 +98,7 @@ const LOAD_REVIEWS = 'loadReviews';
 const LOAD_REVIEWS_SUCCESSFUL = 'loadReviewSuccessful';
 const LOAD_REVIEWS_FAIL = 'loadReviewFail';
 const SHOW_MORE = 'showMore';
+const SHOW_ADD_TO_COLLECTION_MODAL = 'showAddToCollectionModal';
 
 export default function ReviewListReducer(state = initState, action) {
   switch (action.type) {
@@ -137,6 +139,13 @@ export default function ReviewListReducer(state = initState, action) {
         shortText: !state.shortText,
       };
     }
+    case SHOW_ADD_TO_COLLECTION_MODAL: {
+      console.log('show collection moal');
+      return {
+        ...state,
+        showCollectionModal: true,
+      };
+    }
     default: return state;
   }
 }
@@ -158,6 +167,12 @@ export const reviewListActions = {
   showMore() {
     return {
       type: SHOW_MORE,
+    };
+  },
+
+  openModal() {
+    return {
+      type: SHOW_ADD_TO_COLLECTION_MODAL,
     };
   },
 

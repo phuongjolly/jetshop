@@ -85,7 +85,7 @@ class Review extends React.Component {
             </div>
           </div>
           <div className="actions">
-            <button type="button">
+            <button type="button" onClick={this.props.openModal}>
               <i className="fa fa-bookmark-o" />
               Save
             </button>
@@ -102,6 +102,7 @@ Review.propTypes = {
   review: PropTypes.shape(),
   showMore: PropTypes.func.isRequired,
   shortText: PropTypes.bool,
+  openModal: PropTypes.func.isRequired,
 };
 
 Review.defaultProps = {

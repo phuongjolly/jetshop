@@ -1,0 +1,96 @@
+.modal {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal .holder {
+    background-color: white;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.7);
+    margin: 15% auto;
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.modal .holder .m-header {
+    display: block;
+    background-color: #666;
+    padding: 10px;
+    color: #fff;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.modal .holder .m-header button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal .holder .m-header i {
+    color: #fff;
+}
+
+.modal .holder .content {
+    padding: 10px 30px;
+    display: flex;
+    flex-flow: column;
+}
+
+.modal .holder .content label {
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.modal .holder .footer {
+    background-color: rgb(247, 248, 249);
+    padding: 10px 30px;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+}
+
+.modal .holder .footer button {
+    border: none;
+    padding: 5px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333333;
+    font-weight: bolder;
+    transition-duration: 0.25s;
+    margin-left: 5px;
+    background: none;
+    font-weight: 400;
+}
+
+.modal .holder .footer .positive{
+    background-color: #0085B6;
+    color: #fff;
+}
+
+.modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

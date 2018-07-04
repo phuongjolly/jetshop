@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Review from './Review';
 import { reviewListActions } from '../store/ReviewListReducer';
+import AddToCollectionModal from './AddToCollectionModal';
 
 function Home({
-  reviews, showAsGrid, toggleGrid, toggleList, showMore, shortText,
+  reviews, showAsGrid, toggleGrid, toggleList, showMore, shortText, showCollectionModal, openModal,
 }) {
-  console.log(toggleGrid);
+  console.log('re-render?');
   return (
     <div className="list-review">
       <div className="page-title">
@@ -30,10 +31,17 @@ function Home({
         <div className="page-content">
           <div className={`reviews ${showAsGrid ? 'grid' : ''}`}>
             {reviews.map(review => (
-              <Review key={review.id} review={review} showMore={showMore} shortText={shortText} />
+              <Review
+                key={review.id}
+                review={review}
+                showMore={showMore}
+                shortText={shortText}
+                openModal={openModal}
+              />
             ))}
           </div>
         </div>
+        <AddToCollectionModal show={showCollectionModal} />
       </div>
     </div>
   );
@@ -53,9 +61,12 @@ Home.propTypes = {
   toggleList: PropTypes.func.isRequired,
   showMore: PropTypes.func.isRequired,
   shortText: PropTypes.bool,
+  showCollectionModal: PropTypes.bool,
+  openModal: PropTypes.func.isRequired,
 };
 
 Home.defaultProps = {
   reviews: null,
   shortText: true,
+  showCollectionModal: false,
 };
