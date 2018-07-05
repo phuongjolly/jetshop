@@ -21,7 +21,11 @@
     display: flex;
     flex-flow: row;
     align-items: center;
-    padding: 12px 0;
+    padding: 12px 10px;
+}
+
+.drop-down-content .item.itemToAdd{
+    background-color: #0085B6;
 }
 
 .drop-down-content .item span {
@@ -38,6 +42,7 @@
 .drop-down-content .item:hover {
     cursor: pointer;
     background-color: rgb(236, 245, 252);
+    outline: none;
 }
 
 .drop-down:hover .drop-down-content {
@@ -51,6 +56,7 @@
     min-height: 30px;
     padding: 10px;
     border: none;
+    outline: none;
 }
 
 .drop-down-content .item i {
@@ -59,3 +65,22 @@
     color: green;
     margin-top: -10px;
 }
+
+.drop-down-content .item.itemToAdd {
+    background-color: #0BB4C1;
+    outline: none;
+}
+
+.drop-down-content .item.itemToAdd:hover {
+    background-color: #0BB4A1;
+}
+
+.drop-down-content .item.itemToAdd span {
+    color: #fff;
+}
+
+.drop-down-content .item.itemToAdd .item-label {
+    color: #e1e7ec;
+    margin-right: 5px;
+}
+

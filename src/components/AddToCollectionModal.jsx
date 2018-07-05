@@ -3,21 +3,27 @@ import PropTypes from 'prop-types';
 import './AddToCollectionModal.css';
 import { connect } from 'react-redux';
 import DropDown from './DropDown';
-import { collectionActions } from '../store/CollectionReducer';
+import { collectionActions } from '../store/CollectionModalReducer';
 
-function AddToCollectionModal({ show, collections, updateSelectedItem, selectedItem }) {
-  if (!show) {
+function AddToCollectionModal({
+  collections, isActive, selectedItem,
+  closeModal, updateSelectedItem,
+  updateItemToAdd, itemToAdd,
+}) {
+  if (!isActive) {
     return null;
   }
+
+  document.body.style.overflow = 'hidden';
 
   return (
     <div className="modal">
       <div className="holder">
         <div className="m-header">
           <span>
-            Add to Collection
+          Add to Collection
           </span>
-          <button>
+          <button onClick={() => closeModal()}>
             <i className="trash alternate icon" />
           </button>
         </div>
@@ -29,10 +35,12 @@ function AddToCollectionModal({ show, collections, updateSelectedItem, selectedI
             selected={selectedItem}
             items={collections}
             afterSelect={item => updateSelectedItem(item)}
+            updateItemToAdd={updateItemToAdd}
+            itemToAdd={itemToAdd}
           />
         </div>
         <div className="footer">
-          <button>
+          <button onClick={() => closeModal()}>
             Cancel
           </button>
           <button className="positive">
@@ -45,19 +53,23 @@ function AddToCollectionModal({ show, collections, updateSelectedItem, selectedI
 }
 
 export default connect(
-  state => state.collections,
+  state => state.collectionsModal,
   collectionActions,
 )(AddToCollectionModal);
 
 AddToCollectionModal.propTypes = {
-  show: PropTypes.bool,
+  isActive: PropTypes.bool,
   collections: PropTypes.arrayOf(PropTypes.shape()),
   updateSelectedItem: PropTypes.func.isRequired,
   selectedItem: PropTypes.shape(),
+  closeModal: PropTypes.func.isRequired,
+  updateItemToAdd: PropTypes.func.isRequired,
+  itemToAdd: PropTypes.shape(),
 };
 
 AddToCollectionModal.defaultProps = {
-  show: false,
+  isActive: false,
   collections: [],
   selectedItem: null,
+  itemToAdd: null,
 };

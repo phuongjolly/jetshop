@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Review from './Review';
 import { reviewListActions } from '../store/ReviewListReducer';
 import AddToCollectionModal from './AddToCollectionModal';
+import { collectionActions } from '../store/CollectionModalReducer';
 
 function Home({
   reviews, showAsGrid, toggleGrid, toggleList, showMore, shortText, showCollectionModal, openModal,
@@ -41,7 +42,7 @@ function Home({
             ))}
           </div>
         </div>
-        <AddToCollectionModal show={showCollectionModal} />
+        <AddToCollectionModal />
       </div>
     </div>
   );
@@ -51,7 +52,7 @@ console.log(reviewListActions);
 
 export default connect(
   state => state.reviewList,
-  reviewListActions,
+  ({ ...reviewListActions, ...collectionActions }),
 )(Home);
 
 Home.propTypes = {

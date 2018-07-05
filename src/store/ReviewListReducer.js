@@ -85,11 +85,48 @@ const initState = {
         avatar: 'https://semantic-ui.com/images/avatar/small/joe.jpg',
       },
     },
+    {
+      id: 4,
+      name: 'bbf',
+      title: 'Terrible food',
+      dish: {
+        id: 3,
+        name: 'Salad',
+        type: 'Vegan',
+        restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
+      },
+      images: [],
+      content: 'Kimchi is the center of attention in many Korean foods. The kimchi mentioned at the beginning of this article is actually truer to the original ',
+      rate: 5,
+      user: {
+        id: 3,
+        name: 'John',
+        avatar: 'https://semantic-ui.com/images/avatar/small/joe.jpg',
+      },
+    },
+    {
+      id: 5,
+      name: 'aaf',
+      title: 'Noodle Malaysia',
+      dish: {
+        id: 3,
+        name: 'Salad',
+        type: 'Vegan',
+        restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
+      },
+      images: [],
+      content: 'Kimchi is the center of attention in many Korean foods. The kimchi mentioned at the beginning of this article is actually truer to the original ',
+      rate: 5,
+      user: {
+        id: 3,
+        name: 'John',
+        avatar: 'https://semantic-ui.com/images/avatar/small/joe.jpg',
+      },
+    },
   ],
   isLoading: false,
   showAsGrid: false,
   shortText: true,
-  showCollectionModal: false,
 };
 
 const TOGGLE_GRID = 'toggleGrid';
@@ -98,7 +135,6 @@ const LOAD_REVIEWS = 'loadReviews';
 const LOAD_REVIEWS_SUCCESSFUL = 'loadReviewSuccessful';
 const LOAD_REVIEWS_FAIL = 'loadReviewFail';
 const SHOW_MORE = 'showMore';
-const SHOW_ADD_TO_COLLECTION_MODAL = 'showAddToCollectionModal';
 
 export default function ReviewListReducer(state = initState, action) {
   switch (action.type) {
@@ -139,13 +175,6 @@ export default function ReviewListReducer(state = initState, action) {
         shortText: !state.shortText,
       };
     }
-    case SHOW_ADD_TO_COLLECTION_MODAL: {
-      console.log('show collection moal');
-      return {
-        ...state,
-        showCollectionModal: true,
-      };
-    }
     default: return state;
   }
 }
@@ -167,12 +196,6 @@ export const reviewListActions = {
   showMore() {
     return {
       type: SHOW_MORE,
-    };
-  },
-
-  openModal() {
-    return {
-      type: SHOW_ADD_TO_COLLECTION_MODAL,
     };
   },
 
