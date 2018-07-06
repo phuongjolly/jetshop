@@ -243,6 +243,7 @@ export const collectionActions = {
   },
 
   closeModal() {
+    document.body.style.overflow = 'initial';
     return {
       type: CLOSE_MODAL,
     };

@@ -31,7 +31,7 @@ class Review extends React.Component {
           && (
           <div
             className="image"
-            style={{ backgroundImage: `url(${review.images[0].url}` }}
+            style={{ backgroundImage: `url(${review.image})` }}
           />
           )
         }

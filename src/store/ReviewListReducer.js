@@ -10,9 +10,7 @@ const initState = {
         restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
       },
       title: 'Fantasic SADAD',
-      images: [
-        { url: 'https://res.cloudinary.com/abillionveg/image/upload/c_scale,w_700/v1530087318/Pickles_yoyqut.jpg' },
-      ],
+      image: 'https://res.cloudinary.com/abillionveg/image/upload/c_scale,w_700/v1530087318/Pickles_yoyqut.jpg',
       content: 'Our ancient ancestors found fermentation an effective way to preserve food, as the lactic acid or alcohol produced becomes natural preservatives that ',
       rate: 5,
       user: {
@@ -31,9 +29,7 @@ const initState = {
         restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
       },
       title: 'Pretty food',
-      images: [
-        { url: 'https://res.cloudinary.com/abillionveg/image/upload/c_scale,w_700/v1530087319/Wine_f6fppn.jpg' },
-      ],
+      image: 'https://res.cloudinary.com/abillionveg/image/upload/c_scale,w_700/v1530087319/Wine_f6fppn.jpg',
       content: 'Fermentation is the result of bacteria and yeast breaking down carbohydrates to produce carbon dioxide, lactic acid, and alcohol as '
       + 'Fermentation is the result of bacteria and yeast breaking down carbohydrates to produce carbon dioxide, lactic acid, and alcohol as'
       + 'This is an example of truncating the text in PHP. This method works fine in limiting the text, but requires messing with the'
@@ -55,9 +51,7 @@ const initState = {
         restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
       },
       title: 'Fantasic food',
-      images: [
-        { url: 'https://res.cloudinary.com/abillionveg/image/upload/c_scale,w_700/v1530087318/kimchi_ttn85h.jpg' },
-      ],
+      image: 'https://res.cloudinary.com/abillionveg/image/upload/c_scale,w_700/v1530087318/kimchi_ttn85h.jpg',
       content: 'Kimchi is the center of attention in many Korean foods. The kimchi mentioned at the beginning of this article is actually truer to the original ',
       rate: 5,
       user: {
@@ -76,7 +70,7 @@ const initState = {
         type: 'Vegan',
         restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
       },
-      images: [],
+      image: 'http://www.belmare.gr/uploads/vegan-Eggplant-baked.jpg',
       content: 'Kimchi is the center of attention in many Korean foods. The kimchi mentioned at the beginning of this article is actually truer to the original ',
       rate: 5,
       user: {
@@ -95,7 +89,7 @@ const initState = {
         type: 'Vegan',
         restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
       },
-      images: [],
+      image: '',
       content: 'Kimchi is the center of attention in many Korean foods. The kimchi mentioned at the beginning of this article is actually truer to the original ',
       rate: 5,
       user: {
@@ -114,7 +108,7 @@ const initState = {
         type: 'Vegan',
         restaurant: 'The Butcher’s Son, Downtown Berkeley, Berkeley, California, United States',
       },
-      images: [],
+      image: 'https://www.seriouseats.com/images/2016/03/20150203-menu-yu-xian-sichuan-eggplant-fish-flavor-12-thumb-1500xauto-418828.jpg',
       content: 'Kimchi is the center of attention in many Korean foods. The kimchi mentioned at the beginning of this article is actually truer to the original ',
       rate: 5,
       user: {
