@@ -129,6 +129,10 @@
     margin-right: 5px;
 }
 
+.review .user-info .actions button.view-collection {
+    background-color: #0BB4A1;
+}
+
 .review .time {
     text-transform: none;
     color: #888;

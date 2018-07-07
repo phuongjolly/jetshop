@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Review.css';
+import { Link } from 'react-router-dom';
 
 const maxLength = 200;
 class Review extends React.Component {
   showShortText(content) {
+    const { showMore } = this.props;
     if (content.length > maxLength) {
       const shortText = content.substr(0, maxLength - 1);
       return (
         <p>
           { shortText }
-          <span className="show-more" onClick={() => this.props.showMore()}>
+          <span className="show-more" onClick={() => showMore()}>
             [...]
           </span>
         </p>
@@ -24,10 +26,30 @@ class Review extends React.Component {
   }
 
   render() {
-    const { review, shortText } = this.props;
+    const {
+      review, shortText, openModal, showMore,
+    } = this.props;
+    let action = '';
+    if (review.collection) {
+      action = (
+        <Link to="/collections/:id">
+          <button className="view-collection" type="button" onClick={() => openModal(review)}>
+            <i className="fa fa-bookmark-o" />
+            {review.collection.name}
+          </button>
+        </Link>
+      );
+    } else {
+      action = (
+        <button type="button" onClick={() => openModal(review)}>
+          <i className="fa fa-bookmark-o" />
+          Save
+        </button>
+      );
+    }
     return (
       <div className="review">
-        {review.images.length > 0
+        {review.image
           && (
           <div
             className="image"
@@ -64,7 +86,7 @@ class Review extends React.Component {
             <p>
               { review.content }
               {(review.content.length > maxLength) && (
-                <span className="show-more" onClick={() => this.props.showMore()}>
+                <span className="show-more" onClick={() => showMore()}>
                   [...]
                 </span>
               )}
@@ -85,10 +107,7 @@ class Review extends React.Component {
             </div>
           </div>
           <div className="actions">
-            <button type="button" onClick={this.props.openModal}>
-              <i className="fa fa-bookmark-o" />
-              Save
-            </button>
+            {action}
           </div>
         </div>
       </div>

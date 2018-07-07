@@ -21,7 +21,7 @@ class DropDown extends React.Component {
     if (filterResult.length === 0) {
       updateItemToAdd(item);
     } else {
-      updateItemToAdd('');
+      updateItemToAdd(null);
     }
   }
 
@@ -43,7 +43,7 @@ class DropDown extends React.Component {
               href={`#${itemToAdd.id}`}
               key={itemToAdd.id}
               onKeyPress={() => afterSelect(itemToAdd)}
-              onClick={() => { afterSelect(itemToAdd); updateItemToAdd(''); }}
+              onClick={() => { afterSelect(itemToAdd); updateItemToAdd(null); }}
               className="item itemToAdd"
             >
               <span className="item-label">New collection: </span>
@@ -55,8 +55,8 @@ class DropDown extends React.Component {
           }
           {items.filter(item => this.filterItem(item)).map(item => (
             <a
-              href={`#${item.id}`}
-              key={item.id}
+              href={`#${item._id}`}
+              key={item._id}
               onKeyPress={() => afterSelect(item)}
               onClick={() => afterSelect(item)}
               className="item"

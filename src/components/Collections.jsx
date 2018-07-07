@@ -2,20 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Collections.css';
+import { collectionActions } from '../store/CollectionListReducer';
 
 class Collections extends React.Component {
+  async componentDidMount() {
+    const { loadCollections } = this.props;
+    loadCollections();
+  }
+
   getValidImages(collection) {
     return collection.reviews.filter(review => review.image !== '');
   }
 
   render() {
     const { collections } = this.props;
-    let images_filter = [];
+    const imagesFilter = [];
     collections.map(collection => (
-      images_filter.push(this.getValidImages(collection))
+      imagesFilter.push(this.getValidImages(collection))
     ));
-
-    console.log(images_filter);
 
     return (
       <div className="page-collection">
@@ -26,22 +30,22 @@ class Collections extends React.Component {
           <div className="collections">
             {
               collections.map((collection, index) => (
-                <div key={collection.id} className="collection">
+                <div key={collection._id} className="collection">
                   {
-                    images_filter[index].length > 0
+                    imagesFilter[index].length > 0
                       ? (
                         <div className="images">
                           <div className="row">
-                            {images_filter[index].slice(0, 2).map(item => (
-                              <div className="item" key={images_filter[index]} style={{ backgroundImage: `url(${item.image})` }} />
+                            {imagesFilter[index].slice(0, 2).map(item => (
+                              <div className="item" key={imagesFilter[index]._id} style={{ backgroundImage: `url(${item.image})` }} />
                             ))}
                           </div>
                           {
-                          images_filter[index].length > 2
+                          imagesFilter[index].length > 2
                           && (
                             <div className="row">
-                              {images_filter[index].slice(2, 4).map(item => (
-                                <div className="item" key={images_filter[index]} style={{ backgroundImage: `url(${item.image})` }} />
+                              {imagesFilter[index].slice(2, 4).map(item => (
+                                <div className="item" key={imagesFilter[index]._id} style={{ backgroundImage: `url(${item.image})` }} />
                               ))}
                             </div>
                           )
@@ -52,7 +56,7 @@ class Collections extends React.Component {
                           <div className="row">
                             <div
                               className="item"
-                              style={{ backgroundImage: 'url(https://usateatsiptrip.files.wordpress.com/2018/02/gettyimages-601941442.jpg?w=1000&h=600&crop=1)' }}
+                              style={{ backgroundImage: 'url(https://img.grouponcdn.com/deal/3iSRjRwLapG3mnpKHyrVFAmDd8xd/3i-2000x1200/v1/c700x420.jpg)' }}
                             />
                           </div>
                         </div>
@@ -72,6 +76,7 @@ class Collections extends React.Component {
 
 export default connect(
   state => state.collectionList,
+  collectionActions,
 )(Collections);
 
 Collections.propTypes = {
