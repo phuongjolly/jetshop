@@ -2,15 +2,15 @@ import thunk from 'redux-thunk';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { logger } from 'redux-logger';
 import ReviewListReducer from './ReviewListReducer';
-import ReviewReducer from './ReviewReducer';
-import CollectionModalReducer from './CollectionModalReducer';
+import CollectionsModalReducer from './CollectionModalReducer';
 import CollectionListReducer from './CollectionListReducer';
+import CollectionReducer from './CollectionReducer';
 
 const reducers = {
   reviewList: ReviewListReducer,
-  review: ReviewReducer,
-  collectionsModal: CollectionModalReducer,
+  collectionsModal: CollectionsModalReducer,
   collectionList: CollectionListReducer,
+  collection: CollectionReducer,
 };
 
 const store = createStore(

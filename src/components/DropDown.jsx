@@ -32,7 +32,7 @@ class DropDown extends React.Component {
     return (
       <div className="drop-down">
         <input
-          placeholder="name"
+          placeholder="Create new collection or select from drop box"
           value={selected ? selected.name : ''}
           onChange={event => this.onChange({ name: event.target.value })}
         />

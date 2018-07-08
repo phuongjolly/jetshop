@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   render() {
@@ -7,7 +8,14 @@ class Header extends React.Component {
       <div className="header">
         <div className="main-header">
           <div className="left-item">
-            <i className="bars icon" />
+            <Link class="item" to="/reviews">
+              <i className="comment icon" />
+              <span>Reviews</span>
+            </Link>
+            <Link class="item" to="/collections">
+              <i className="heart icon" />
+              <span>Collections</span>
+            </Link>
           </div>
           <div className="menu">
             <img src="https://www.abillionveg.com/static/media/logo-redux-small.1ca4fde8.png" alt="logo" />

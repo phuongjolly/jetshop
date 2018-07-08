@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Review.css';
 import { Link } from 'react-router-dom';
 
-const maxLength = 200;
+const maxLength = 160;
 class Review extends React.Component {
   showShortText(content) {
     const { showMore } = this.props;
@@ -31,8 +31,9 @@ class Review extends React.Component {
     } = this.props;
     let action = '';
     if (review.collection) {
+      console.log(review);
       action = (
-        <Link to="/collections/:id">
+        <Link to={`/collections/${review.collection._id}`}>
           <button className="view-collection" type="button" onClick={() => openModal(review)}>
             <i className="fa fa-bookmark-o" />
             {review.collection.name}

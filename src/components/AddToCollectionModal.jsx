@@ -8,8 +8,8 @@ import { collectionModalActions } from '../store/CollectionModalReducer';
 
 class AddToCollectionModal extends React.Component {
   componentDidMount() {
-    const { loadCollections } = this.props;
-    loadCollections();
+    const { loadCollectionsModal } = this.props;
+    loadCollectionsModal();
   }
 
   componentWillUnmount() {
@@ -84,7 +84,7 @@ AddToCollectionModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   updateItemToAdd: PropTypes.func.isRequired,
   itemToAdd: PropTypes.shape(),
-  loadCollections: PropTypes.func.isRequired,
+  loadCollectionsModal: PropTypes.func.isRequired,
   addToCollections: PropTypes.func.isRequired,
   goToNextState: PropTypes.bool,
 };

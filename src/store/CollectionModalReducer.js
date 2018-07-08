@@ -21,7 +21,7 @@ const OPEN_MODAL = 'openModal';
 const CLOSE_MODAL = 'closeModal';
 const UPDATE_ITEM_TO_ADD = 'updateItemToAdd';
 
-export default function CollectionReducer(state = initialState, action) {
+export default function CollectionsModalReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_COLLECTIONS_MODAL: {
       return {
@@ -97,7 +97,7 @@ export default function CollectionReducer(state = initialState, action) {
 }
 
 export const collectionModalActions = {
-  loadCollections() {
+  loadCollectionsModal() {
     return async (dispatch) => {
       dispatch({
         type: LOAD_COLLECTIONS_MODAL,

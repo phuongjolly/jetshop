@@ -13,6 +13,7 @@ const LOAD_REVIEWS = 'loadReviews';
 const LOAD_REVIEWS_SUCCESSFUL = 'loadReviewSuccessful';
 const LOAD_REVIEWS_FAIL = 'loadReviewFail';
 const SHOW_MORE = 'showMore';
+const RESET_REVIEWS_SETTING = 'resetReViewSetting';
 
 export default function ReviewListReducer(state = initState, action) {
   switch (action.type) {
@@ -53,6 +54,15 @@ export default function ReviewListReducer(state = initState, action) {
         shortText: !state.shortText,
       };
     }
+    case RESET_REVIEWS_SETTING: {
+      return {
+        ...state,
+        reviews: [],
+        isLoading: false,
+        showAsGrid: false,
+        shortText: true,
+      };
+    }
     default: return state;
   }
 }
@@ -79,6 +89,7 @@ export const reviewListActions = {
   },
 
   toggleGrid() {
+    console.log('toogle grid');
     return {
       type: TOGGLE_GRID,
     };

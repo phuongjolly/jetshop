@@ -34,7 +34,7 @@ export default function CollectionListReducer(state = initialState, action) {
   }
 }
 
-export const collectionActions = {
+export const collectionsActions = {
   loadCollections() {
     return async (dispatch) => {
       dispatch({

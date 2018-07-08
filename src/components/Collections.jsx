@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Collections.css';
-import { collectionActions } from '../store/CollectionListReducer';
+import { Link } from 'react-router-dom';
+import { collectionsActions } from '../store/CollectionListReducer';
 
 class Collections extends React.Component {
   async componentDidMount() {
@@ -30,7 +31,9 @@ class Collections extends React.Component {
           <div className="collections">
             {
               collections.map((collection, index) => (
-                <div key={collection._id} className="collection">
+                <Link to={`/collections/${collection._id}`}
+                      key={collection._id}
+                      className="collection">
                   {
                     imagesFilter[index].length > 0
                       ? (
@@ -41,15 +44,15 @@ class Collections extends React.Component {
                             ))}
                           </div>
                           {
-                          imagesFilter[index].length > 2
-                          && (
-                            <div className="row">
-                              {imagesFilter[index].slice(2, 4).map(item => (
-                                <div className="item" key={imagesFilter[index]._id} style={{ backgroundImage: `url(${item.image})` }} />
-                              ))}
-                            </div>
-                          )
-                        }
+                            imagesFilter[index].length > 2
+                            && (
+                              <div className="row">
+                                {imagesFilter[index].slice(2, 4).map(item => (
+                                  <div className="item" key={imagesFilter[index]._id} style={{ backgroundImage: `url(${item.image})` }} />
+                                ))}
+                              </div>
+                            )
+                          }
                         </div>
                       ) : (
                         <div className="images">
@@ -64,7 +67,7 @@ class Collections extends React.Component {
                   <div className="title">
                     {collection.name}
                   </div>
-                </div>
+                </Link>
               ))
             }
           </div>
@@ -76,7 +79,7 @@ class Collections extends React.Component {
 
 export default connect(
   state => state.collectionList,
-  collectionActions,
+  collectionsActions,
 )(Collections);
 
 Collections.propTypes = {
