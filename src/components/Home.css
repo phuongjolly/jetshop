@@ -50,4 +50,8 @@
         padding-left: 3px;
         padding-right: 3px;
     }
+
+    .view-button .grid-view-button {
+        display: none;
+    }
 }

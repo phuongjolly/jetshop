@@ -32,7 +32,7 @@ class Collection extends React.Component {
                     <i className="list icon" />
                     List View
                   </button>
-                  <button onClick={toggleGrid}>
+                  <button className="grid-view-button" onClick={toggleGrid}>
                     <i className="table icon" />
                     Grid View
                   </button>

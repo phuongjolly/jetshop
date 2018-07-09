@@ -35,7 +35,6 @@
     background-color: white;
     box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
     margin-bottom: 20px;
-    width: 48%;
     padding: 2px;
     display: flex;
     flex-direction: column;
@@ -58,4 +57,17 @@
 .page-collection .collections .collection .images .row .item {
     flex-grow: 1;
     background-size: cover;
+    border: 1px solid white;
+}
+
+@media (max-width: 620px) {
+    .page-collection .collections .collection {
+        width: 100%;
+    }
+}
+
+@media (min-width: 620px) {
+    .page-collection .collections .collection {
+        width: 48%;
+    }
 }

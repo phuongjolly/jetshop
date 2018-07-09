@@ -30,7 +30,6 @@
 
 .header .main-header .left-item {
     color: rgb(96, 105, 116);
-    padding: 5px 20px 5px 20px;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -106,4 +105,16 @@
     border: #eee 1px solid;
     padding-right: 20px;
     padding-left: 20px;
+}
+
+@media (max-width: 620px) {
+    .header .main-header .left-item {
+        padding: 5px 8px;
+    }
+}
+
+@media (min-width: 620px) {
+    .header .main-header .left-item {
+        padding: 5px 20px;
+    }
 }
