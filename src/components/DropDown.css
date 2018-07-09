@@ -1,0 +1,86 @@
+
+.drop-down {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+}
+
+.drop-down-content {
+    position: relative;
+    max-height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.drop-down-content::-webkit-scrollbar {
+    display: none;
+}
+
+.drop-down-content .item {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 12px 10px;
+}
+
+.drop-down-content .item.itemToAdd{
+    background-color: #0085B6;
+}
+
+.drop-down-content .item span {
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+}
+
+.drop-down-content .item:nth-child(even) {
+
+}
+
+.drop-down-content .item:hover {
+    cursor: pointer;
+    background-color: rgb(236, 245, 252);
+    outline: none;
+}
+
+.drop-down:hover .drop-down-content {
+    display: block;
+}
+
+.drop-down input {
+    /* border: 1px solid rgba(34,36,38,.15); */
+    background-color: rgb(244,244,244);
+    width: 100%;
+    min-height: 30px;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.drop-down-content .item i {
+    font-size: 8px;
+    margin-right: 10px;
+    color: green;
+    margin-top: -10px;
+}
+
+.drop-down-content .item.itemToAdd {
+    background-color: #0BB4C1;
+    outline: none;
+}
+
+.drop-down-content .item.itemToAdd:hover {
+    background-color: #0BB4A1;
+}
+
+.drop-down-content .item.itemToAdd span {
+    color: #fff;
+}
+
+.drop-down-content .item.itemToAdd .item-label {
+    color: #e1e7ec;
+    margin-right: 5px;
+}
+

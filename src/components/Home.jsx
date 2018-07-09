@@ -2,58 +2,81 @@ import React from 'react';
 import './Home.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Review from './Review';
+import { reviewListActions } from '../store/ReviewListReducer';
+import AddToCollectionModal from './AddToCollectionModal';
+import { collectionModalActions } from '../store/CollectionModalReducer';
 
 class Home extends React.Component {
-  getStar(number) {
-    return `star${number}`;
+  async componentDidMount() {
+    const { loadReviews } = this.props;
+    loadReviews();
   }
+
   render() {
-    const { reviews } = this.props;
+    const {
+      reviews, showAsGrid, toggleGrid, toggleList,
+      showMore, shortText, openModal,
+    } = this.props;
+
+    console.log('re-render?');
     return (
-      <div className="container">
+      <div className="list-review">
         <div className="page-title">
-          List of Reviews
+          <span>
+          Reviews
+          </span>
+          <div className="view-button">
+            <button onClick={toggleList}>
+              <i className="list icon" />
+              List View
+            </button>
+            <button className="grid-view-button" onClick={toggleGrid}>
+              <i className="table icon" />
+              Grid View
+            </button>
+          </div>
         </div>
         <div className="wrapper">
           <div className="page-content">
-            {reviews.map(review => (
-              <div className="review" key={review.id}>
-                <div className="review-image">
-                  <img src={review.images[0].url} />
-                </div>
-                <div className="review-info">
-                  <div className="user-avatar">
-                    <img src={review.user.avatar} />
-                  </div>
-                  <div className="review-detail">
-                    <div className="review-title">
-                      {review.title}
-                    </div>
-                    <div className="review-content">
-                      {review.content}
-                    </div>
-                  </div>
-                  <div className="review-rate">
-                    <div className={this.getStar(review.rate)}></div>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <div className={`reviews ${showAsGrid ? 'grid' : ''}`}>
+              {reviews.map(review => (
+                <Review
+                  key={review._id}
+                  review={review}
+                  showMore={showMore}
+                  shortText={shortText}
+                  openModal={openModal}
+                />
+              ))}
+            </div>
           </div>
+          <AddToCollectionModal />
         </div>
       </div>
     );
   }
 }
 
+console.log(reviewListActions);
+
 export default connect(
-  state => state.home,
+  state => state.reviewList,
+  ({ ...reviewListActions, ...collectionModalActions }),
 )(Home);
 
 Home.propTypes = {
   reviews: PropTypes.arrayOf(PropTypes.shape()),
+  showAsGrid: PropTypes.bool.isRequired,
+  toggleGrid: PropTypes.func.isRequired,
+  toggleList: PropTypes.func.isRequired,
+  showMore: PropTypes.func.isRequired,
+  shortText: PropTypes.bool,
+  openModal: PropTypes.func.isRequired,
+  loadReviews: PropTypes.func.isRequired,
 };
 
 Home.defaultProps = {
   reviews: null,
+  shortText: true,
 };

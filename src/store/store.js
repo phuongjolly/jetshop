@@ -1,12 +1,16 @@
 import thunk from 'redux-thunk';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { logger } from 'redux-logger';
-import { BannerReducer } from './BannerReducer';
-import HomeReducer from './HomeReducer';
+import ReviewListReducer from './ReviewListReducer';
+import CollectionsModalReducer from './CollectionModalReducer';
+import CollectionListReducer from './CollectionListReducer';
+import CollectionReducer from './CollectionReducer';
 
 const reducers = {
-  banner: BannerReducer,
-  home: HomeReducer,
+  reviewList: ReviewListReducer,
+  collectionsModal: CollectionsModalReducer,
+  collectionList: CollectionListReducer,
+  collection: CollectionReducer,
 };
 
 const store = createStore(

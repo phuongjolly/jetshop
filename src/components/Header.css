@@ -1,9 +1,10 @@
 
 .header {
-    display: flex;
-    flex-flow: column;
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
 }
 
 .header .top-header {
@@ -24,38 +25,53 @@
     flex-flow: row;
     border-color: rgb(225, 235, 236);
     align-items: center;
-    border-top: rgb(225, 231, 236) 1px solid;
-    border-bottom: rgb(225, 231, 236) 1px solid;
     justify-content: space-between;
 }
 
 .header .main-header .left-item {
-    font-size: 20px;
-    color: /*rgb(96, 105, 116);*/ rgb(131, 137, 145);
-    padding: 5px 20px 5px 20px;
-}
-
-.header .main-header .logo {
-    padding: 10px;
-    margin-left: 10px;
-    border-left: rgb(225, 231, 236) 1px solid;
-}
-
-.header .main-header .logo img {
-    width: 150px;
-}
-
-.header .main-header .menu {
+    color: rgb(96, 105, 116);
     display: flex;
     flex-flow: row;
-    justify-content: center;
-    padding: 10px;
-    flex-grow: 3;
-
+    justify-content: space-between;
+    font-weight: 700;
+    align-items: center;
 }
 
-.header .main-header .menu .item {
-    margin-left: 20px;
+.header .main-header .left-item .logo {
+    font-size: 24px;
+    color: #333;
+}
+
+.header .main-header .left-item .logo:hover{
+    color: #0BB4A1;
+    cursor: pointer;
+}
+
+.header .main-header .left-item .item {
+    margin-right: 15px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.header .main-header .left-item .item:hover {
+    font-weight: 700;
+}
+
+
+.header .main-header .left-item .item span {
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #222222;
+}
+
+.header .main-header .left-item .item i {
+    font-size: 22px;
+    color: #0BB4A1;
+}
+
+.header .main-header .left-item .item {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
@@ -90,3 +106,21 @@
     padding-left: 20px;
 }
 
+@media (max-width: 630px) {
+    .header .main-header .left-item {
+        padding: 5px 8px;
+    }
+
+    .header .main-header .left-item .item{
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 631px) {
+    .header .main-header .left-item {
+        padding: 5px 20px;
+    }
+    .header .main-header .left-item .item{
+        margin-left: 20px;
+    }
+}

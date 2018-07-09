@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+
+.reviews {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+    transition-duration: 0.25s;
+}
+
+.reviews.grid .review {
+    width: 48%;
+}
+
+.reviews.grid .review .image {
+    height: 200px;
+}
+
+.reviews .review {
+    width: 100%;
+    border-radius: 0;
+    display: inline-block;
+}
+
+.review {
+    transition-duration: 0.25s;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
+    margin-bottom: 20px;
+}
+
+.review .image {
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    height: 300px;
+}
+
+.review .title {
+    padding: 10px 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #555;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.review .rating {
+    padding: 0 10px 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+.review .rating i {
+    margin-right: 5px;
+}
+
+.review .content {
+    color: #666;
+    padding: 5px 10px;
+    border-top: 1px solid hsla(0, 0%, 0%, 0.025);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.025);
+    min-height: 50px;
+}
+
+.review .content .show-more {
+    margin-left: 3px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.review .user-info {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(247, 248, 249);
+}
+
+.review .user-info .avatar {
+    width: 50px;
+}
+
+.review .user-info .avatar img {
+    border-radius: 50%;
+}
+
+.review .user-info .description {
+    flex-grow: 1;
+}
+
+.review .user-info .description .username {
+    padding: 5px 10px;
+    font-weight: bolder;
+}
+.review .user-info .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.review .user-info .actions button {
+    border: none;
+    background-color: #0085B6;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bolder;
+    transition-duration: 0.25s;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.review .user-info .actions button:hover {
+    background-color: #0BB4C1;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.review .user-info .actions button:active {
+    background-color: #0BB4C1;
+    box-shadow: none;
+}
+
+.review .user-info .actions button i.fa {
+    margin-right: 5px;
+}
+
+.review .user-info .actions button.view-collection {
+    background-color: #0BB4A1;
+}
+
+.review .time {
+    text-transform: none;
+    color: #888;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.review .dish-info {
+    padding: 0 10px 10px 10px;
+    font-size: 12px;
+    color: #888;
+}
+
+@media (max-width: 630px) {
+}
+
+@media (min-width: 631px) {
+
+}
