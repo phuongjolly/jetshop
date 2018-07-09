@@ -97,25 +97,6 @@ export default function CollectionsModalReducer(state = initialState, action) {
 }
 
 export const collectionModalActions = {
-  loadCollectionsModal() {
-    return async (dispatch) => {
-      dispatch({
-        type: LOAD_COLLECTIONS_MODAL,
-      });
-
-      try {
-        const response = await axios.get('/api/collections');
-        dispatch({
-          type: LOAD_COLLECTIONS_MODAL_SUCCESSFUL,
-          data: response.data,
-        });
-      } catch (e) {
-        dispatch({
-          type: LOAD_COLLECTIONS_MODAL_FAIL,
-        });
-      }
-    };
-  },
 
   addToCollections(collection) {
     return async (dispatch, getState) => {
@@ -155,9 +136,27 @@ export const collectionModalActions = {
   },
 
   openModal(review) {
-    return {
-      type: OPEN_MODAL,
-      data: review,
+    return async (dispatch) => {
+      dispatch({
+        type: OPEN_MODAL,
+        data: review,
+      });
+
+      dispatch({
+        type: LOAD_COLLECTIONS_MODAL,
+      });
+
+      try {
+        const response = await axios.get('/api/collections');
+        dispatch({
+          type: LOAD_COLLECTIONS_MODAL_SUCCESSFUL,
+          data: response.data,
+        });
+      } catch (e) {
+        dispatch({
+          type: LOAD_COLLECTIONS_MODAL_FAIL,
+        });
+      }
     };
   },
 

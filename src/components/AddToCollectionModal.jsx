@@ -7,10 +7,6 @@ import DropDown from './DropDown';
 import { collectionModalActions } from '../store/CollectionModalReducer';
 
 class AddToCollectionModal extends React.Component {
-  componentDidMount() {
-    const { loadCollectionsModal } = this.props;
-    loadCollectionsModal();
-  }
 
   componentWillUnmount() {
     const { closeModal } = this.props;
@@ -39,10 +35,10 @@ class AddToCollectionModal extends React.Component {
         <div className="holder">
           <div className="m-header">
             <span>
-          Add to Collection
+              Add to Collection
             </span>
             <button onClick={() => closeModal()}>
-              <i className="trash alternate icon" />
+              <i className="fa fa-window-close" />
             </button>
           </div>
           <div className="content">
@@ -84,7 +80,6 @@ AddToCollectionModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   updateItemToAdd: PropTypes.func.isRequired,
   itemToAdd: PropTypes.shape(),
-  loadCollectionsModal: PropTypes.func.isRequired,
   addToCollections: PropTypes.func.isRequired,
   goToNextState: PropTypes.bool,
 };

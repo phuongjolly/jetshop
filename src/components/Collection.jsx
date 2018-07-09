@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { collectionActions } from '../store/CollectionReducer';
 import './Home.css';
 import { collectionModalActions } from '../store/CollectionModalReducer';
@@ -31,11 +30,11 @@ class Collection extends React.Component {
                 <div className="view-button">
                   <button onClick={toggleList}>
                     <i className="list icon" />
-                List View
+                    List View
                   </button>
                   <button onClick={toggleGrid}>
                     <i className="table icon" />
-                Grid View
+                    Grid View
                   </button>
                 </div>
               </div>

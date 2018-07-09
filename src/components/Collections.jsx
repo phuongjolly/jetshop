@@ -31,16 +31,21 @@ class Collections extends React.Component {
           <div className="collections">
             {
               collections.map((collection, index) => (
-                <Link to={`/collections/${collection._id}`}
-                      key={collection._id}
-                      className="collection">
+                <Link
+                  to={`/collections/${collection._id}`}
+                  key={collection._id}
+                  className="collection">
                   {
                     imagesFilter[index].length > 0
                       ? (
                         <div className="images">
                           <div className="row">
                             {imagesFilter[index].slice(0, 2).map(item => (
-                              <div className="item" key={imagesFilter[index]._id} style={{ backgroundImage: `url(${item.image})` }} />
+                              <div
+                                className="item"
+                                key={item._id}
+                                style={{ backgroundImage: `url(${item.image})` }}
+                              />
                             ))}
                           </div>
                           {
@@ -48,7 +53,11 @@ class Collections extends React.Component {
                             && (
                               <div className="row">
                                 {imagesFilter[index].slice(2, 4).map(item => (
-                                  <div className="item" key={imagesFilter[index]._id} style={{ backgroundImage: `url(${item.image})` }} />
+                                  <div
+                                    className="item"
+                                    key={item._id}
+                                    style={{ backgroundImage: `url(${item.image})` }}
+                                  />
                                 ))}
                               </div>
                             )

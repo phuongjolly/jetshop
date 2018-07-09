@@ -44,3 +44,10 @@
     background-color: #0085B6;
     margin-right: 5px;
 }
+
+@media (max-width: 620px) {
+    .wrapper {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}

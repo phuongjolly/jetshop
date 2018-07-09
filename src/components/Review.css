@@ -106,13 +106,13 @@
 
 .review .user-info .actions button {
     border: none;
-    padding: 10px 20px;
-    font-size: 14px;
     background-color: #0085B6;
     cursor: pointer;
     color: #fff;
     font-weight: bolder;
     transition-duration: 0.25s;
+    padding: 10px 20px;
+    font-size: 14px;
 }
 
 .review .user-info .actions button:hover {
@@ -144,4 +144,11 @@
     padding: 0 10px 10px 10px;
     font-size: 12px;
     color: #888;
+}
+
+@media (max-width: 620px) {
+}
+
+@media (min-width: 620px) {
+
 }
