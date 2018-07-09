@@ -60,13 +60,13 @@
     border: 1px solid white;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 630px) {
     .page-collection .collections .collection {
         width: 100%;
     }
 }
 
-@media (min-width: 620px) {
+@media (min-width: 631px) {
     .page-collection .collections .collection {
         width: 48%;
     }

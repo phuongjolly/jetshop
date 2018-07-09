@@ -72,7 +72,6 @@
 }
 
 .header .main-header .left-item .item {
-    margin-left: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
@@ -107,14 +106,21 @@
     padding-left: 20px;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 630px) {
     .header .main-header .left-item {
         padding: 5px 8px;
     }
+
+    .header .main-header .left-item .item{
+        margin-left: 10px;
+    }
 }
 
-@media (min-width: 620px) {
+@media (min-width: 631px) {
     .header .main-header .left-item {
         padding: 5px 20px;
+    }
+    .header .main-header .left-item .item{
+        margin-left: 20px;
     }
 }
