@@ -1,8 +1,10 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-export function Header() {
+export function Header({ user }) {
   return (
     <div className="header">
       <div className="main-header">
@@ -28,8 +30,30 @@ Reviews
           <div className="item">
             <i className="search icon" />
           </div>
-          <div className="item">
+          <div className="item user-info">
             <i className="user outline icon" />
+            <div className="content">
+              <div className="user-info-detail">
+                <div className="avatar">
+                  <img src={user.avatar} alt="avatar" />
+                </div>
+                <div>
+                  <span>
+                    {user.name}
+                  </span>
+                </div>
+              </div>
+              <div className="user-menu">
+                <Link to="/Profile">
+                  Profile
+                </Link>
+              </div>
+              <div>
+                <Link to="/user/logout">
+                  Logout
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -37,4 +61,14 @@ Reviews
   );
 }
 
-export default Header;
+export default connect(
+  state => state.authentication,
+)(Header);
+
+Header.propTypes = {
+  user: PropTypes.shape(),
+};
+
+Header.defaultProps = {
+  user: null,
+};

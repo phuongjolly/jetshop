@@ -9,6 +9,7 @@ import store from './store/store';
 import Review from './components/Review';
 import Collections from './components/Collections';
 import Collection from './components/Collection';
+import Profile from './components/Profile';
 
 const customHistory = createBrowserHistory();
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
             <Header />
             <div className="container">
               <Switch>
+                <Route path="/profile" component={Profile} />
                 <Route path="/reviews/:name" component={Review} />
                 <Route path="/collections/:id" component={Collection} />
                 <Route path="/collections" component={Collections} />

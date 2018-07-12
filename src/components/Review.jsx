@@ -91,7 +91,6 @@ class Review extends React.Component {
                   [...]
                 </span>
               )}
-
             </p>
           )}
         </div>
@@ -109,6 +108,14 @@ class Review extends React.Component {
           </div>
           <div className="actions">
             {action}
+          </div>
+        </div>
+        <div className="comments">
+          <div className="comment">
+            <input placeholder="Add your comment..." />
+            <button>
+              Post
+            </button>
           </div>
         </div>
       </div>
