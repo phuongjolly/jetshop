@@ -112,7 +112,8 @@
 }
 
 .tool-bar .item.user-info:hover .content {
-    display: block;
+    display: flex;
+    flex-flow: column;
 }
 
 .tool-bar .item.user-info .content .user-info-detail {
